@@ -1,1 +1,1 @@
-# telescope
+# min-pct
