@@ -2,7 +2,7 @@
 
 ---
 
-Geant4 - an Object-Oriented Toolkit for Simulation in HEP
+Geant4 simulation of a telescope for proton beam detection.
 
 ## 1. Requrements
 
