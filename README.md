@@ -9,7 +9,7 @@ Geant4 - an Object-Oriented Toolkit for Simulation in HEP
 - Gean4 version 9.0
 - CLEP
 - ROOT
-- CMAKE version in minimum (3.16 - 3.21)
+- CMAKE version in minimum (2.6)
 
 ## 2. Execute program
 
@@ -33,47 +33,6 @@ cmake .. && make -j<number of threads>
 
 ### 2.4 Run the simulation
 
-#### 2.4.1 Vis mode
-
 ```text
-./examplePCT --output <output path> --phantom <phatom name>
+./telescope
 ```
-
-The result of runBeam will be generated to /build/output directory for single rotation of phantom.
-
-#### 2.4.2 Batch mode
-
-```text
-./examplePCT --macro run_loop.mac --output <output path> --phantom <phatom name>
-```
-
-The result of runBeam will be generated to /build/output directory for 0 - 180 degree in phantom ratation.
-
-Phantom names can be use as *.obj* file in phantom directory with out format suffix.
-
-Without running options, the running options will be default values.
-
-## 3. Results
-
-Without using *--output* option, the output data will be in ./output of build directory.
-
-## 4. Configure the simulation
-
-### - Number of primary
-  
-In *onloop.mac* file
-
-```text
-/run/beamOn <number of primary per a projection>
-```
-
-### - Rotation angle (degree) of phantom
-
-In run_loop.mac
-
-```text
-/control/loop onloop.mac angle <start angle> <end angle> <step> 
-```
-
-The rotation of the phantom start rotating from *\<start angle\>* with *\<step\>* step angle until it reachs *\<end angle\>*. The *\<step\>* value can be omitted for stepping with 1 degree. The result will be generated according to the number of rotation steps.
-
