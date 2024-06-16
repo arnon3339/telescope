@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Setup the project
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(ProtonCT)
+project(Telescope)
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default
@@ -32,8 +32,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(ProtonCT ProtonCT.cc ${sources} ${headers})
-target_link_libraries(ProtonCT ${Geant4_LIBRARIES})
+add_executable(telescope ProtonCT.cc ${sources} ${headers})
+target_link_libraries(telescope ${Geant4_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -59,9 +59,9 @@ endforeach()
 # For internal Geant4 use - but has no effect if you build this
 # example standalone
 #
-#add_custom_target(hadrontherapy DEPENDS hadrontherapy)
+#add_custom_target(telescope DEPENDS telescope)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS ProtonCT DESTINATION bin)
+install(TARGETS telescope DESTINATION bin)
